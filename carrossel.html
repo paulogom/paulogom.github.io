@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+
+	/*seletor universal - as propriedades vão para todos os elementos*/
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: Verdana, sans-serif;
+		margin:0
+	}
+
+	div#container{
+		width: 1000px;
+		margin: auto;
+		position: relative;
+	}
+
+	div.numero {
+		color:#ffffff;
+		background-color: rgba(0,0,0,0.6);
+		border-radius: 5px;
+		padding:5px;
+		position: absolute;
+		top:20px;
+		left:20px;
+	}
+
+	div.legenda{
+		width:100%;
+		padding:10px 0px;
+		color:#ffffff;
+		background-color: rgba(0,0,0,0.6); 
+		text-align: center;
+		position: absolute;
+		bottom: 3px;
+	}
+
+	div.slide{
+		position:relative;
+		display: none;
+	}
+
+	a.anterior {
+		display:block;
+		font-weight: bold;		
+		border-radius: 0px 10px 10px 0px;
+		position:absolute;
+		left: 0px;
+		top:50%;
+		font-size: 30px;
+		padding:20px;
+		color:#ffffff;
+		margin-top: -50px;
+		transition: background-color 0.5s;
+	}
+
+		a.posterior {
+		display:block;
+		font-weight: bold;
+		border-radius: 10px 0px 0px 10px;
+		position:absolute;
+		right: 0px;
+		top:50%;
+		font-size: 30px;
+		padding:20px;
+		color:#ffffff;
+		margin-top: -50px;
+		transition: background-color 0.5s;
+	}
+
+	/* Mudar a cor de fundo quando passar o mouse em cima */
+	a.anterior:hover{
+		background-color: rgba(0,0,0,0.6); 
+	}
+
+	a.posterior:hover{
+		background-color: rgba(0,0,0,0.6); 
+	}
+
+	span.ponto{
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		background-color:#bbbbbb;
+		border-radius: 50%;
+		cursor:pointer;
+		transition: background-color 0.5s;
+	}
+
+	div#pontos{
+		text-align: center;
+	}
+
+	span.ativo, span.ponto:hover {
+  		background-color: #717171;
+		}
+
+	.fade {
+		animation-name: fade;
+		animation-duration: 1s;
+	}
+
+	@keyframes fade {
+		  from {opacity: 0.4;} 
+		  to {opacity: 1;}
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- Container para centralizar -->
+	<div id="container">
+
+		<!-- Slides -->
+		<div class="slide fade">
+			<div class="numero">1/4</div>
+			<img class="imagem" src="media/imagem01.jpg">
+			<div class="legenda">Legenda da Imagem 1</div>
+		</div>
+		<div class="slide fade">
+			<div class="numero">2/4</div>
+			<img class="imagem" src="media/imagem02.jpg">
+			<div class="legenda">Legenda da Imagem 2</div>
+		</div>
+		<div class="slide fade">
+			<div class="numero">3/4</div>
+			<img class="imagem" src="media/imagem03.jpg">
+			<div class="legenda">Legenda da Imagem 3</div>
+		</div>
+		<div class="slide fade">
+			<div class="numero">4/4</div>
+			<img class="imagem" src="media/imagem04.jpg">
+			<div class="legenda">Legenda da Imagem 4</div>
+		</div>
+
+		<!-- Setas para slide anterior e posterior -->
+		<a class="anterior" onclick="anteriorPosterior(-1)">&#10094;</a>	
+		<a class="posterior" onclick="anteriorPosterior(1)">&#10095;</a>	
+
+		<!-- Pontos -->
+		<div id="pontos">
+			<span class="ponto" onclick="slideAtual(1)"></span>
+			<span class="ponto" onclick="slideAtual(2)"></span>
+			<span class="ponto" onclick="slideAtual(3)"></span>
+			<span class="ponto" onclick="slideAtual(4)"></span>
+		</div>
+	</div>	
+
+<script>
+
+var slideIndex = 1;
+trocaSlide(slideIndex);
+	
+	function anteriorPosterior(n){
+			trocaSlide(slideIndex += n); 
+	}
+
+	function slideAtual(n) {
+		trocaSlide(slideIndex = n);
+	}
+
+	function trocaSlide(n){
+		var i;
+		var slides = document.getElementsByClassName("slide");
+		var pontos = document.getElementsByClassName("ponto");
+
+		//se o valor do próximo slide for maior que o comprimento, volta para o começo.
+		if (n > slides.length) {slideIndex = 1;} 
+
+		//se o valor do slide anterior for menor que 1, vai para o final.   
+		if (n < 1) {slideIndex = slides.length;}
+
+		//apaga todos os slides
+		for (i=0; i<slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+
+		// exibe o slide desejado.
+		slides[slideIndex-1].style.display = "block";
+
+		//remove a classe "ativo" de todos os pontos.
+		for(i=0; i<pontos.length; i++) {
+		pontos[i].className = pontos[i].className.replace(" ativo", "");
+		}
+
+		// aplica a classe "ativo" ao ponto atual.
+		pontos[slideIndex-1].className += " ativo";
+
+	}
+
+</script>
+
+
+</body>
+</html>

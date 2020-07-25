@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		h1{
+			width:600px;
+			margin: auto;
+			text-align: center;
+		}
+
+		form{
+			background-color: lightblue;
+			width:600px;
+			margin: auto;
+			padding:10px;
+		}
+
+		label{
+			width: 150px;
+			display: inline-block;
+			text-align: right;
+			margin: 0px;
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 200px;
+			margin: 0px;
+		}
+
+		input[type="submit"] {
+			margin-left: 275px;
+		}
+
+		div{
+			margin:10px 0px;
+		}
+
+		span {
+			color:red;
+			display:none;
+			font-size:0.7em;
+		}
+
+	</style>
+
+</head>
+<body>
+	<h1>Formulário de cadastro</h1>
+	<form name="formulario" onsubmit="return validaForm()">
+		<div>
+			<label for="nome">Nome:</label>
+			<input id="nome" name="nome" type="text">
+			<span id="msgNome">Favor inserir seu nome.</span>
+			<span id="msgNomeIncompleto">Favor inserir o nome completo.</span>
+		</div>
+		<div>
+			<label for="email">E-mail:</label>
+			<input id="email" name="email" type="text">
+			<span id="msgEmail">Favor inserir um e-mail válido.</span>
+		</div>
+		<div>
+			<label for="senha">Senha:</label>
+			<input id="senha" name="senha" type="password">
+			<span id="msgSenha">A senha deve conter no mínimo 6 caracteres.</span>
+		</div>
+		<div>
+			<label for="confirmasenha">Confirmar senha:</label>
+			<input id="confirmasenha" name="confirmasenha" type="password">
+			<span id="msgConfirmaSenha">As senhas não são iguais.</span>
+		</div>
+		<div>
+		<label for="mostrasenha">Mostrar Senha: </label>
+		<input id="mostrasenha" type="checkbox" onclick="mostraSenha()">
+		
+		</div>
+
+		<div>
+			<input type="submit" value="Cadastrar">
+		</div>
+	</form>
+
+		<script>
+			function validaForm(){
+
+			// as variáveis armazenam os valores dos campos dos formulários	
+			var nome = formulario.nome.value;
+			var email = formulario.email.value;
+			var senha = formulario.senha.value;
+			var confirmasenha = formulario.confirmasenha.value;
+
+				// verifica se o campo nome foi preenchido
+				if (nome == ""){
+					document.getElementById("msgNome").style.display = "inline";
+
+					// comando para interromper o envio do fromulário
+					return false;
+				} 
+
+				// verifica se foi escrito o nome completo
+				// se indexOf(" ") == -1 significa que na string não há espaço
+				if (nome.indexOf(" ") == -1) {
+					document.getElementById("msgNomeIncompleto").style.display = "inline";
+
+					//oculta a mensagem anterior
+					document.getElementById("msgNome").style.display = "none";
+					return false;
+				}
+
+				// verifica se no e-mail há o "@" e se há texto após ele
+				if (email.indexOf('@') == -1 ||  email.indexOf('@') >= email.length-1){
+					document.getElementById("msgEmail").style.display = "inline";
+					return false;
+				}
+
+				// verifica se a senha tem 6 ou mais caracteres
+				if(senha.length < 6){
+					document.getElementById("msgSenha").style.display = "inline";
+					return false;
+				}
+
+				// verifica se as senhas digitadas correspondem
+				if(senha != confirmasenha){
+					document.getElementById("msgConfirmaSenha").style.display = "inline";
+					return false;
+				}
+
+			}
+
+		function mostraSenha(){
+
+		// variáveis armazenam os elementos de senha
+		var x = document.getElementById("senha");
+		var y = document.getElementById("confirmasenha");
+		  
+			// altera o type dos input para aparecer ou não a senha
+			if (x.type === "password") {
+			x.type = "text";
+			} else {
+			x.type = "password";
+			}
+
+			if (y.type === "password") {
+			y.type = "text";
+			} else {
+			y.type = "password";
+			}
+	
+		}
+
+		</script>
+
+</body>
+</html>

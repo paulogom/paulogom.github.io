@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplos de JavaScript</title>
+
+		<style>
+		div#quadro {
+		  width: 100px;
+		  height: 100px;
+		  background-color: red;
+		  transition: width 3s, background-color 2s;
+			}
+
+	</style>
+
+</head>
+<body>
+	<div>
+		<h1>Modificando elementos da página</h1>
+
+		<h2>Modificando Conteúdo</h2>
+
+		<p id="teste">O JavaScript pode ser usado para modificar o conteúdo de um elemento HTML.</p>	
+
+		<button type="button" onclick="document.getElementById('teste').innerHTML = 'Olá JavaScript!'">Clique aqui!</button>
+	</div>
+
+	<div>
+		<h2>Modificando Atributo</h2>
+
+		<button onclick="document.getElementById('MinhaImagem').src='media/on.gif'">Acende a luz</button>
+
+		<img id="MinhaImagem" src="media/off.gif">
+
+		<button onclick="document.getElementById('MinhaImagem').src='media/off.gif'">Apaga a luz</button>
+	</div>
+
+	<div>
+		<h2>Modificando Estilo</h2>
+
+		<p id="texto_estilo">O JavaScript pode ser usado para modificar o estilo um elemento HTML.</p>	
+
+		<button onclick="document.getElementById('texto_estilo').style.fontSize='35px'">Clique aqui!</button>
+	</div>
+
+	<div>
+		<h2>Ocultando e revelando elementos</h2>
+
+		<p id="texto_ocultar">O JavaScript pode ser usado para ocultar ou revelar um elemento HTML.</p>
+
+		<button onclick="document.getElementById('texto_ocultar').style.display='none'">Ocultar</button>
+
+		<button onclick="document.getElementById('texto_ocultar').style.display='block'">Aparecer</button>
+	</div>
+
+	<hr>
+
+	<h1> Locais de Declaração do JavaScript </h1>
+
+	<div>
+		<h2>Uso de script em arquivo externo</h2>
+		
+		<p id="MeuParagrafo"></p>
+
+		<script src="scripts.js"></script>
+	</div>
+
+	<hr>
+
+	<h1>Saídas do JavaScript</h1>
+
+	<div>
+		<h2>Saída do JavaScript através do console.log</h2>
+
+		<script>
+		console.log("Olá Mundo (pelo console)!")
+		</script>
+	</div>
+
+	<div>
+		<h2>Saída do JavaScript através do window.alert</h2>
+
+		<script>
+			//window.alert("Olá Mundo (por pop-up)!")
+		</script>
+	</div>
+
+	<div>
+		<h2>Saída do JavaScript através do document.write</h2>
+	
+		<script>
+			document.write(5<4)
+		</script>
+
+		<button onclick="document.write(5<4)">Clique Aqui!</button>
+	</div>
+
+	<hr>
+
+	<h1>Lógica no JavaScript</h1>
+
+		<h2>Uso de variáveis e operadores</h2>
+
+		<script>
+			// Operadores: https://www.w3schools.com/js/js_operators.asp
+
+			//declaração de variáveis
+			var x, y, z;
+
+			// Operador de atribuição "="
+			x = 6;
+			y = 5;
+			z = x + y;
+
+			//Operadores aritméticos
+			document.write("<p> O resultado da adição é " + z + "</p>");
+			z = x - y;
+			document.write("<p> O resultado da subtração é " + z + "</p>");
+			z = x * y;
+			document.write("<p> O resultado da multiplicação é " + z + "</p>");
+			z = x / y;
+			document.write("<p> O resultado da divisão é " + z + "</p>" + "</p>");
+			z = x ** y;
+			document.write("<p> O resultado da exponenciação é " + z + "</p>");
+			z = x % y;
+			document.write("<p> O resto da divisão é " + z + "</p>");
+			
+			//Operadores de incrementação
+			z++;
+			document.write("<p> O valor de z + 1 é " + z + "</p>");
+			z--;
+			document.write("<p> O valor de z - 1 é " + z + "</p>");
+			z += x; //z = z + x
+			document.write("<p> O valor de z + x é " + z + "</p>");
+			
+			// Operadores de comparação
+			z = x < y
+			document.write("<p> O resultado de x < y é " + z + "</p>");
+			z = x > y
+			document.write("<p> O resultado de x > y é " + z + "</p>");
+			z = x == y
+			document.write("<p> O resultado de x = y é " + z + "</p>");
+			z = x !== y
+			document.write("<p> O resultado de x !== y é " + z + "</p>");
+			x = 5;
+			y = "5";
+			z = x == y; // compara apenas valor
+			document.write("<p> O resultado de x == y é " + z + "</p>");
+			x = 5;
+			y = "5";
+			z = x === y; // compara valor e tipo de variável
+			document.write("<p> O resultado de x === y é " + z + "</p>");
+
+		</script>
+
+		<h2>Tipos de variáveis</h2>
+
+		<script>
+
+		var comprimento = 168.4; // número
+		var sobrenome = "Ribeiro"; // texto
+		var frutas = ["maçã" , "banana", "morango", "uva" , "goiaba"]; // vetor
+		var pessoa = {primeiroNome: "Claudia", sobreNome: "Silva", idade: 19 , olhos: "castanhos" }; // objeto
+
+		document.write("<p> O valor da variável comprimento é " + comprimento + " metros.</p>");
+
+		document.write("<p> O valor da variável sobrenome é " + sobrenome + ".</p>");
+
+		document.write("<p> O valor da variável frutas é " + frutas + ".</p>");
+
+		document.write("<p> O valor que está na posição '0' da variável frutas é " + frutas[0] + ".</p>");
+
+		document.write("<p> O valor que está na posição '1' da variável frutas é " + frutas[1] + ".</p>");
+
+		document.write("<p> O valor da variável pessoa é " + pessoa + ".</p>");	
+		
+		document.write("<p> O valor da propriedade 'primeiroNome' da variável 'pessoa' é " + pessoa.primeiroNome + ".</p>");
+
+		document.write("<p> O valor da propriedade 'olhos' da variável 'pessoa' é " + pessoa.olhos + ".</p>");	
+
+		document.write("<p> O tipo da variável comprimento é " + typeof comprimento + ".</p>");	
+
+		document.write("<p> O tipo da variável sobrenome é " + typeof sobrenome + ".</p>");	
+
+		document.write("<p> O tipo da variável frutas é " + typeof frutas + ".</p>");
+
+		document.write("<p> O tipo da variável pessoa é " + typeof pessoa + ".</p>");
+
+	</script>
+
+	<h2>Funções</h2>
+
+	<script>
+
+		function minhaFuncao(p1,p2)	{
+			return p1 * p2;
+		}
+
+		document.write("<p> O resultado da função 'minhaFuncao' é " + minhaFuncao(3,4) + ".</p>");
+
+		var resultado = minhaFuncao(5,2);
+
+		document.write("<p> O resultado da função 'minhaFuncao' através de uma variárel é " + resultado + ".</p>");
+
+	</script>
+
+	<!-- manipulando elementos de página com funções JavaScript -->
+	<div id="quadro" onclick="mudaTamanho()" onmouseover="mudaCor()"></div>
+
+	<script>
+		function mudaCor(){
+		document.getElementById("quadro").style.backgroundColor="blue";
+			}
+
+		function mudaTamanho(){
+			document.getElementById("quadro").style.width="500px";
+		}
+	</script>
+
+	<h2> Métodos para texto </h2>
+
+	<script>
+		var txt = "TI22";
+		document.write("<p> O valor da variável txt é: " + txt + ".</p>");
+
+		var comprimento = txt.length;
+		document.write("<p> O comprimento da variável txt é: " + comprimento + ".</p>");
+
+		txt = "A turma TI22 está estudando JavaScript, não é TI22?";
+		var posicao = txt.indexOf('TI22');
+		document.write("<p> A posição do texto 'TI22' na variável txt é: " + posicao + ".</p>");
+
+		posicao = txt.lastIndexOf('TI22');
+		document.write("<p> A última posição do texto 'TI22' na variável txt é: " + posicao + ".</p>");
+	</script>
+
+		<h2> Operadores lógicos </h2>
+
+	<script>
+
+		var bol1 = false;
+		var bol2 = false;
+		var resultado = bol1 && bol2;
+		document.write(resultado);
+
+		resultado = bol1 || bol2;
+		document.write(resultado);
+
+	</script>
+
+		<h2> Estruturas condicionais </h2> 
+
+	<script>
+
+		var data = new Date(); // cria um novo objeto com a data atual
+		var hora = data.getHours(); // função para capturar o número de horas
+		document.write ("<p>" + data + "</p>");
+		document.write ("<p>" + hora + "</p>");
+
+		if (hora < 12){
+			document.write ("<p>Bom dia!</p>");
+		} else if (hora < 18) {
+			document.write ("<p>Boa tarde!</p>");
+		} else {
+			document.write ("<p>Boa noite!</p>");
+		}
+
+		// uso so else if
+		var dia = data.getDay(); //função para capturar o númeto do dia da semana
+		document.write (dia);
+
+		if (dia == 0) {
+			document.write ("<p>Domingo</p>");
+		} else if (dia == 1) {
+			document.write ("<p>Segunda</p>");
+		} else if (dia == 2) {
+			document.write ("<p>Terça</p>");
+		} else if (dia == 3) {
+			document.write ("<p>Quarta</p>");
+		} else if (dia == 4) {
+			document.write ("<p>Quinta</p>");
+		} else if (dia == 5) {
+			document.write ("<p>Sexta</p>");
+		} else {
+			document.write ("<p>Sábado</p>");
+		}	
+
+		// uso do switch
+		switch (dia) {
+		  case 0:
+		    document.write ("<p>Domingo</p>");
+		    break;
+		  case 1:
+		    document.write ("<p>Segunda</p>");
+		    break;
+		  case 2:
+		    document.write ("<p>Terça</p>");
+		    break;
+		  case 3:
+		    document.write ("<p>Quarta</p>");
+		    break;
+		  case 4:
+		    document.write ("<p>Quinta</p>");
+		    break;
+		  case 5:
+		    document.write ("<p>Sexta</p>");
+		    break;
+		  case  6:
+		    document.write ("<p>Domingo</p>");
+		}
+
+	</script>
+
+		<h2> Estruturas de repetição </h2> 
+
+	<script>
+
+		//uso do for
+		var i;
+		for (i=2; i<=20; i=i+2){
+			document.write ("<p>Loop " + i + "</p>");
+		}
+
+		var cores = ["azul", "amarelo", "verde", "vermelho", "branco", "roxo"];
+
+		document.write("<ol>");
+		for (i=0; i<cores.length; i++){
+			document.write("<li>" + cores[i] + "</li>");
+		}
+		document.write("</ol>");
+
+
+
+
+
+	</script>
+	</div>
+
+
+</body>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+		<script>
+		var comprimento = 168.4; // número
+		var sobrenome = "Ribeiro"; // texto
+		var frutas = ["maçã" , "banana", "morango", "uva" , "goiaba"]; // vetor
+		var pessoa = {primeiroNome: "Claudia", sobreNome: "Silva", idade: 19 , olhos: "castanhos" }; // objeto
+
+		document.write("<h1> Tipos de variáveis </h1>")
+
+		document.write("<p> O valor da variável comprimento é " + comprimento + " metros.</p>");
+
+		document.write("<p> O valor da variável sobrenome é " + sobrenome + ".</p>");
+
+		document.write("<p> O valor da variável frutas é " + frutas + ".</p>");
+
+		document.write("<p> O valor que está na posição '0' da variável frutas é " + frutas[0] + ".</p>");
+
+		document.write("<p> O valor que está na posição '1' da variável frutas é " + frutas[1] + ".</p>");
+
+		document.write("<p> O valor da variável pessoa é " + pessoa + ".</p>");	
+		
+		document.write("<p> O valor da propriedade 'primeiroNome' da variável 'pessoa' é " + pessoa.primeiroNome + ".</p>");
+
+		document.write("<p> O valor da propriedade 'olhos' da variável 'pessoa' é " + pessoa.olhos + ".</p>");	
+
+		document.write("<p> O tipo da variável comprimento é " + typeof comprimento + ".</p>");	
+
+		document.write("<p> O tipo da variável sobrenome é " + typeof sobrenome + ".</p>");	
+
+		document.write("<p> O tipo da variável frutas é " + typeof frutas + ".</p>");
+
+		document.write("<p> O tipo da variável pessoa é " + typeof pessoa + ".</p>");
+
+		document.write("<h1> Funções </h1>")	
+
+		function minhaFuncao(p1,p2)	{
+			return p1 * p2;
+		}
+
+		document.write("<p> O resultado da função 'minhaFuncao' é " + minhaFuncao(3,4) + ".</p>");
+
+		var resultado = minhaFuncao(5,2);
+
+		document.write("<p> O resultado da função 'minhaFuncao' através de uma variárel é " + resultado + ".</p>");
+
+	</script>
+
+</body>
+</html>

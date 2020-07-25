@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		
+		//estrutura básica
+		$(document).ready (function(){ //executa a função após a página ser carregada
+			$("button#btn1").click (function(){ // executa a função quando o botão é clicado
+				$("p").hide(); // função oculta todos os elementos parágrafo da página
+			})
+		}); // fim do $(document).ready
+
+
+		$(document).ready (function(){
+
+			$("button#btn2").click (function(){
+				$(".teste").hide(); // função oculta todos os elementos com a classe "teste" da página
+			})
+
+			$("button#btn3").click (function(){
+				$("#unico").hide(); // função oculta o elemento com id "unico" da página
+			})
+
+			$("button#btn4").hover (function(){ // executa a função quando passa o mouse
+				$("#unico").hide();
+			});
+
+			// formulário
+			$("input").focus(function(){ // executa a função quando clica no campo
+				$(this).css("background-color", "yellow"); //this - aplica a propriedade/ação nele mesmo
+			})
+
+			$("input").blur(function(){ // executa a função quando clica fora do campo
+				$(this).css("background-color", "green");
+			})		
+
+			// menu
+			$(".item").hover(function(){ // chama função quando passar o mouse por cima do item
+				$(this).find(".subitem").show(); // encontra o elemento com classe "subitem" dentro dele e mostra
+			},	function(){ // função "callback"
+				$(this).find(".subitem").hide();
+			});
+
+
+		}); // fim do $(document).ready
+
+	</script>
+
+	<style>
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.item {
+			color: #ffffff;
+			background-color: #990000;
+			list-style-type: none;
+			margin: 0;
+			width: 20%;
+			text-align: center;
+			float: left;
+		}
+
+		.item div{
+			padding: 5px;
+		}
+
+		.subitem{
+			background-color: #ff9900;
+			display: none;
+			list-style-type: none;
+			list-style-position: inside;
+			padding: 0;
+		}
+
+		.subitem li{
+			padding: 5px;			
+		}
+
+		.subitem li:hover{
+			background-color: #cc7a00;
+		}
+
+		.subitem li a{
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn1">Clique para ocultar por elemento</button>
+	<button id="btn2">Clique para ocultar por classe</button>
+	<button id="btn3">Clique para ocultar por id</button>
+	<button id="btn4">Passe o mouse para ocultar por id</button>
+
+	<h1 class="teste"> Isto é um cabeçalho</h1>
+	<p class="teste">Isto é um parágrafo</p>
+	<p id="unico">Isto é um outro parágrafo</p>
+
+	<h2>Formulário</h2>
+	<form>
+		<label for="nome">Nome:</label><input id="nome" type="text"><br>
+		<label for="email">E-mail:</label><input id="email" type="text">
+	</form>
+
+	<h2>Menu suspenso</h2>
+
+	<ul>
+		<li class="item"><div>Item 1</div>
+			<ul class="subitem"> 
+				<li><a href="">Subitem 1.1</a></li>
+				<li><a href="">Subitem 1.2</a></li>
+			</ul>
+		</li>
+		<li class="item"><div>Item 2</div>
+			<ul class="subitem"> 
+				<li><a href="">Subitem 2.1</a></li>
+				<li><a href="">Subitem 2.2</a></li>
+				<li><a href="">Subitem 2.3</a></li>
+				<li><a href="">Subitem 2.4</a></li>
+
+			</ul>
+		</li>
+		<li class="item"><div>Item 3</div>
+			<ul class="subitem"> 
+				<li><a href="">Subitem 3.1</a></li>
+				<li><a href="">Subitem 3.2</a></li>
+				<li><a href="">Subitem 3.3</a></li>
+			</ul>
+		</li>
+	</ul>
+		
+</body>
+</html>

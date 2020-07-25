@@ -1,0 +1,1 @@
+document.getElementById('MeuParagrafo').innerHTML='Parágrafo escrito pelo JavaScript'

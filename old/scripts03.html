@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style>
+		div#quadro {
+		  width: 100px;
+		  height: 100px;
+		  background-color: red;
+		  transition: width 3s, background-color 2s;
+			}
+
+	</style>
+</head>
+<body>
+		<div id="quadro" onclick="mudaTamanho()" onmouseover="mudaCor()"></div>
+
+		<script>
+			function mudaCor(){
+			document.getElementById("quadro").style.backgroundColor="blue";
+				}
+
+			function mudaTamanho(){
+				document.getElementById("quadro").style.width="500px";
+			}
+		</script>
+</body>
+</html>

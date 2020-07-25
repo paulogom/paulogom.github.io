@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste de Layout</title>
+
+	<style>
+
+		/*			
+		REGRA DE PRIORIDADE DO CSS - Regras mais específicas têm prioridade sobre regras mais gerais
+		
+		Estilo Inline (mais específido)
+		Seletores com ID
+		Seletores com pseudo-classes
+		Seletores com atributos
+		Seletores com classe
+		Seletores
+		Seletores Universais (mais geral)
+		*/
+
+		/* Seletor universal */
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body{
+			/*background-color: black;*/ /*https://www.w3schools.com/cssref/pr_background-color.asp*/
+			/*background-image: url(media/padrao.jpg);*/ /* https://www.w3schools.com/cssref/pr_background-image.asp */
+
+			/*Forma resumida */
+			background: black url(media/padrao.jpg);
+		}
+
+		div{
+			width: 80%;
+			margin:auto;
+		}
+
+		header.cabecalho{
+			background-color: red;
+			width: 100%;
+			height: 150px;
+			padding:10px;
+			box-sizing: border-box; /* https://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
+			background-image: url(media/logo_batman.png);
+			background-repeat: no-repeat; /* https://www.w3schools.com/cssref/pr_background-repeat.asp */
+			background-position: 20px center; /* https://www.w3schools.com/cssref/pr_background-position.asp */
+			padding-left: 210px;
+		}
+
+		nav{
+			background-color: yellow;
+			width: 100%;
+		}
+
+		main {
+			background-color: white;
+			width: 70%;
+
+			
+			box-sizing: border-box;
+
+
+  				
+
+		}
+
+		aside {
+			background-color: green;
+			width: 30%;
+			padding:10px;
+			box-sizing: border-box;
+		}
+
+		footer{
+			background-color: cyan;
+			width: 100%;
+			height: 150px;
+			clear:left;
+			padding:10px;
+			box-sizing: border-box;
+		}
+
+		nav ul{
+			width: 80%;
+			margin: 0 auto;
+			padding: 0;
+			list-style-type: none;
+		}
+
+		nav li{
+			padding:10px;
+		
+			text-align: center;
+			box-sizing: border-box;
+		}
+
+		nav li:hover{
+			background-color: cyan;
+		}
+
+		nav a:link, nav a:visited {
+			color:green;
+			text-decoration: none;
+		}
+
+		section#sessao1{
+			background-color: navy;
+
+
+		}
+
+		section#sessao2{
+			background-color: olive;
+
+		}
+
+				section#sessao3{
+			background-color: purple;
+
+		}
+
+
+		section{
+			
+
+			color:yellow;
+			padding:30px;
+
+		}
+
+		.linha{
+width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+	<header class="cabecalho"><p>Conteúdo do header</p></header>
+	<nav>
+		<ul class="linha">
+		<li><a href="index.html">Index</a></li>
+		<li><a href="listas.html">Listas</a></li>
+		<li><a href="tabelas.html">Tabelas</a></li>
+		<li><a href="formularios.html">Formulários</a></li>
+		<li><a href="links.html">Links</a></li>
+		<li><a href="midias.html">Mídia</a></li>
+		</ul>
+	</nav>
+
+	<div class="linha">
+	<main>
+
+<div class="linha">
+		<section id="sessao1">
+		<p>Conteúdo da primeira sessão</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada consectetur massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dignissim euismod dui, at tincidunt nulla ornare sit amet. Etiam varius ultricies neque non feugiat. Nulla quis velit eros. Praesent volutpat ante eu tortor congue ullamcorper. Quisque sit amet vulputate urna, et iaculis mi. Pellentesque accumsan facilisis mi, vel eleifend nisi tincidunt ac. Morbi vitae tellus ac diam eleifend tincidunt. Aenean nunc lectus, cursus et sollicitudin et, convallis a nisl. Quisque dapibus risus at mattis mattis. Morbi vitae metus sodales libero lobortis feugiat. Vestibulum quis nisl vitae tellus euismod hendrerit quis vel ex. Donec in tincidunt massa.</p>
+
+		<p>Nullam interdum elit et lectus hendrerit pretium. Aliquam efficitur quis neque tincidunt varius. In ac consequat diam. Quisque rhoncus tempor scelerisque. Duis nec tincidunt eros, eu eleifend ligula. Aliquam semper ornare risus in tristique. In dignissim id ex in pharetra. Nam egestas iaculis nulla in maximus.</p>
+		</section>
+
+
+		<section id="sessao2">
+		<p>Conteúdo da segunda sessão</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada consectetur massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dignissim euismod dui, at tincidunt nulla ornare sit amet. Etiam varius ultricies neque non feugiat. Nulla quis velit eros. Praesent volutpat ante eu tortor congue ullamcorper. Quisque sit amet vulputate urna, et iaculis mi. Pellentesque accumsan facilisis mi, vel eleifend nisi tincidunt ac. Morbi vitae tellus ac diam eleifend tincidunt. Aenean nunc lectus, cursus et sollicitudin et, convallis a nisl. Quisque dapibus risus at mattis mattis. Morbi vitae metus sodales libero lobortis feugiat. Vestibulum quis nisl vitae tellus euismod hendrerit quis vel ex. Donec in tincidunt massa.</p>
+
+		<p>Nullam interdum elit et lectus hendrerit pretium. Aliquam efficitur quis neque tincidunt varius. In ac consequat diam. Quisque rhoncus tempor scelerisque. Duis nec tincidunt eros, eu eleifend ligula. Aliquam semper ornare risus in tristique. In dignissim id ex in pharetra. Nam egestas iaculis nulla in maximus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada consectetur massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dignissim euismod dui, at tincidunt nulla ornare sit amet. Etiam varius ultricies neque non feugiat. Nulla quis velit eros. Praesent volutpat ante eu tortor congue ullamcorper. Quisque sit amet vulputate urna, et iaculis mi. Pellentesque accumsan facilisis mi, vel eleifend nisi tincidunt ac. Morbi vitae tellus ac diam eleifend tincidunt. Aenean nunc lectus, cursus et sollicitudin et, convallis a nisl. Quisque dapibus risus at mattis mattis. Morbi vitae metus sodales libero lobortis feugiat. Vestibulum quis nisl vitae tellus euismod hendrerit quis vel ex. Donec in tincidunt massa.</p>
+
+		<p>Nullam interdum elit et lectus hendrerit pretium. Aliquam efficitur quis neque tincidunt varius. In ac consequat diam. Quisque rhoncus tempor scelerisque. Duis nec tincidunt eros, eu eleifend ligula. Aliquam semper ornare risus in tristique. In dignissim id ex in pharetra. Nam egestas iaculis nulla in maximus.</p>
+		</section>
+	</div>
+	<div class="linha">
+	<section id="sessao3">
+		<p>Conteúdo da terceira sessão</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada consectetur massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dignissim euismod dui, at tincidunt nulla ornare sit amet. Etiam varius ultricies neque non feugiat. Nulla quis velit eros. Praesent volutpat ante eu tortor congue ullamcorper. Quisque sit amet vulputate urna, et iaculis mi. Pellentesque accumsan facilisis mi, vel eleifend nisi tincidunt ac. Morbi vitae tellus ac diam eleifend tincidunt. Aenean nunc lectus, cursus et sollicitudin et, convallis a nisl. Quisque dapibus risus at mattis mattis. Morbi vitae metus sodales libero lobortis feugiat. Vestibulum quis nisl vitae tellus euismod hendrerit quis vel ex. Donec in tincidunt massa.</p>
+
+		<p>Nullam interdum elit et lectus hendrerit pretium. Aliquam efficitur quis neque tincidunt varius. In ac consequat diam. Quisque rhoncus tempor scelerisque. Duis nec tincidunt eros, eu eleifend ligula. Aliquam semper ornare risus in tristique. In dignissim id ex in pharetra. Nam egestas iaculis nulla in maximus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada consectetur massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce dignissim euismod dui, at tincidunt nulla ornare sit amet. Etiam varius ultricies neque non feugiat. Nulla quis velit eros. Praesent volutpat ante eu tortor congue ullamcorper. Quisque sit amet vulputate urna, et iaculis mi. Pellentesque accumsan facilisis mi, vel eleifend nisi tincidunt ac. Morbi vitae tellus ac diam eleifend tincidunt. Aenean nunc lectus, cursus et sollicitudin et, convallis a nisl. Quisque dapibus risus at mattis mattis. Morbi vitae metus sodales libero lobortis feugiat. Vestibulum quis nisl vitae tellus euismod hendrerit quis vel ex. Donec in tincidunt massa.</p>
+
+		<p>Nullam interdum elit et lectus hendrerit pretium. Aliquam efficitur quis neque tincidunt varius. In ac consequat diam. Quisque rhoncus tempor scelerisque. Duis nec tincidunt eros, eu eleifend ligula. Aliquam semper ornare risus in tristique. In dignissim id ex in pharetra. Nam egestas iaculis nulla in maximus.</p>
+		</section>
+	</div>	
+
+	</main>
+	<aside><p>Conteúdo do aside</p></aside>
+
+</div>
+	<footer><p>Conteúdo do footer</p></footer>
+	</div>
+
+</body>
+</html>

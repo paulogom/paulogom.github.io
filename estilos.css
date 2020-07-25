@@ -1,0 +1,312 @@
+/* Diversas propriedades de CSS são herdadas do elemento pai (externo) para o elemento filho (interno) */
+body{
+	font-family: Montserrat, Verdana, Arial, sans-serif; /* fonte https://www.w3schools.com/cssref/pr_font_font-family.asp */
+	background-color: #ADD8E6;
+}
+
+/* FORMATAÇÃO DE TEXTO */
+
+p{
+	text-align:justify; /* alinhamento de texto https://www.w3schools.com/cssref/pr_text_text-align.ASP */
+	text-indent: 2em; /* recuo de primeira linha https://www.w3schools.com/cssref/pr_text_text-indent.asp */
+	line-height:1.2em; /* entrelinha https://www.w3schools.com/cssref/pr_dim_line-height.asp */
+	font-size:16px;
+
+	/* Unidades no CSS: https://www.w3schools.com/cssref/css_units.asp */
+}
+strong{
+	color:navy; /* cor do texto https://www.w3schools.com/cssref/pr_text_color.asp */
+	text-decoration: underline; /* sublinhado https://www.w3schools.com/cssref/pr_text_text-decoration.asp */
+	font-weight: normal; /* negrito https://www.w3schools.com/cssref/pr_font_weight.asp*/
+	font-style: italic; /* itálico https://www.w3schools.com/cssref/pr_font_font-style.asp*/
+}
+h1{
+	color:navy;
+	background-color:#ccccff; /* cor de fundo https://www.w3schools.com/cssref/pr_background-color.asp */
+	text-transform: uppercase; /* todas maiúsculas https://www.w3schools.com/cssref/pr_text_text-transform.asp */
+	text-shadow: 1px 1px 3px black; /* sombra do texto https://www.w3schools.com/css/css3_shadows.asp */
+	font-size:40px; /* tamanho da fonte https://www.w3schools.com/cssref/pr_font_font-size.asp */
+	text-align: center;
+}
+h2{
+	color:#0000ff;
+	font-variant: small-caps; /* versalete (letras com formato de maiúscula e tamanho de minúscula) https://www.w3schools.com/cssref/pr_font_font-variant.asp*/
+}
+
+h3{
+	/*
+	font-style:italic;
+	font-variant:small-caps;
+	font-weight:normal;
+	font-size:20px;
+	line-height:24px;
+	font-family:serif;
+	*/
+
+	font:italic small-caps normal 20px/24px serif; /* forma resumida https://www.w3schools.com/css/css_font_shorthand.asp */
+}
+
+/* FORMATAÇÃO DE IMAGEM */
+
+img{
+	width: 400px; /* largura https://www.w3schools.com/cssref/pr_dim_width.asp */
+
+	/* https://www.w3schools.com/cssref/pr_border-style.asp */
+	/*
+	border-top-style: solid;
+	border-bottom-style: dotted;
+	border-left-style: double;
+	border-right-style: dashed;
+	*/
+
+	/*
+	border-style: solid dashed dotted double;
+	*/
+
+	/* https://www.w3schools.com/cssref/pr_border-width.asp */
+
+	/*
+	border-top-width: 15px;
+	border-bottom-width: 10px;
+	border-left-width: 5px;
+	border-right-width: 20px;
+	*/
+
+	/*
+	border-width: 15px 20px 10px 5px;
+	*/
+	
+	/* https://www.w3schools.com/cssref/pr_border-color.asp */
+
+	/*
+	border-top-color:red;
+	border-bottom-color:blue;
+	border-left-color:magenta;
+	border-right-color:green;
+	*/
+
+	/*
+	border-color:red green blue magenta;
+	*/
+
+	/*
+	border-color:red green blue;
+	*/
+
+	/*
+	border-color:red green;
+	*/
+
+	border:10px solid blue; /* borda https://www.w3schools.com/cssref/pr_border.asp */
+
+	/*
+	padding-top:20px;
+	padding-right:40px;
+	padding-bottom:80px;
+	padding-left:160px;
+	*/
+
+	/*
+	padding: 20px 40px 80px 160px;
+	*/
+
+	padding: 20px; /* https://www.w3schools.com/css/css_padding.asp */
+
+	/*
+	margin-top:30px;
+	margin-right:10px;
+	margin-bottom:20px;
+	margin-left:40px;
+	*/
+
+	/*
+	margin: 30px 10px 20px 40px;
+	*/
+
+	margin:30px; /* https://www.w3schools.com/css/css_margin.asp */
+
+}
+
+/* FORMATAÇÃO DE LISTAS */
+ul{
+padding-left:40px;
+width: 200px;
+
+list-style-type:none;
+/*list-style-image:url(media/favicon.png);*/
+
+list-style-position:inside;
+
+
+}
+
+ul.lista1 li{
+background-color: blue;
+margin:10px;
+padding:10px;
+color:white;
+
+}
+
+ol.lista2{
+	background-color: green;
+	list-style-position:inside;
+	list-style-type:hiragana;
+}
+
+/* FORMATAÇÃO DE LISTAS */
+
+table, td, th {
+	border-bottom: 1px solid black;
+
+}
+
+table{
+	border-top: 1px solid black;
+	border-collapse: collapse;
+	width: 400px;
+	margin:0 auto;
+	background-color: yellow;
+}
+
+th, td {
+	/*height: 50px;
+  vertical-align: center;*/
+  text-align: center;
+
+  padding: 0 50px;
+}
+
+table th{
+background-color: orange;
+	}
+
+td:hover {
+	background-color: red;
+	color:white;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+/*FORMATAÇÃO DE FORMULÁRIO */
+
+form{
+	width: 80%; /* uso da unidade "%" para criar um layout responsivo (que se adapta ao tamanho da tela do usuário) https://www.w3schools.com/cssref/css_units.asp */
+	margin: auto;
+}
+
+fieldset{
+	background-color: #6666ff;
+	border: none;
+}
+
+legend{
+	padding-top: 30px;
+}
+
+/* Formatação de seletores pelo seu id https://www.w3schools.com/cssref/sel_id.asp */
+#nome, #senha, #confirmasenha, #email,
+#telefone, #nascimento, #preferencia, textarea {
+	background-color: #e6eeff;
+	border:none; /* sem borda */
+	width: 70%;
+	height: 30px;
+	border-radius: 5px; /* Cantos arredondados https://www.w3schools.com/cssreF/css3_pr_border-radius.asp */
+}
+
+/* Formatação da pseudo-classe ":focus" que é quando o controle está em foco (com o cursor de texto dentro dele) */
+#nome:focus, #senha:focus, #confirmasenha:focus, #email:focus,
+#telefonev:focus, #nascimento:focus, #preferencia:focus, textarea:focus {
+  background-color: #ffffff;
+  border:none;
+}
+
+label{
+	display:inline-block; /* https://www.w3schools.com/cssref/pr_class_display.asp*/
+	width: 20%;
+	text-align: right;
+}
+
+/* Formatação de seletores com atributos específicos https://www.w3schools.com/css/css_attribute_selectors.asp */
+label[for="pf"], label[for="pj"], label[for="informativo"]{
+	display:inline;
+}
+
+input[id="pf"]{
+	margin-left: 20%;
+}
+
+textarea{
+	width: 70%;
+	height: 150px;
+	resize: none; /* redimensionamento https://www.w3schools.com/cssref/css3_pr_resize.asp */
+}
+
+label[for="mensagem"]{
+	vertical-align: top; /* alinhamento vertical https://www.w3schools.com/cssref/pr_pos_vertical-align.asp */
+}
+
+input[type="reset"], input[type="submit"]{
+	width: 200px;
+	height:50px;
+	background-color: #0040ff;
+	color:white;
+	border:2px solid #00134d;
+	border-radius: 10px;
+}
+
+input[type="reset"]:hover, input[type="submit"]:hover{
+	background-color: #4d4dff;
+	}
+
+/* FORMATAÇÃO DE LINKS */
+
+a:link{
+	color:grey;
+}
+
+a:visited{
+	color:red;
+}
+
+a:hover{
+	color:white;
+}
+
+a:active{
+	color:yellow;
+}
+
+nav{
+	background-color: red;
+}
+
+nav ul{
+	width: 80%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+nav li{
+	padding:10px;
+	width: 16%;
+	display: inline-block;
+	text-align: center;
+	box-sizing: border-box;
+
+}
+
+
+nav li:hover{
+	background-color: cyan;
+}
+
+nav a:link, nav a:visited {
+	color:green;
+	text-decoration: none;
+
+
+}
+

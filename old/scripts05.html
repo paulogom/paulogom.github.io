@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+	<script>
+		var txt = "TI22";
+		document.write("<p> O valor da variável txt é: " + txt + ".</p>");
+
+		var comprimento = txt.length;
+		document.write("<p> O comprimento da variável txt é: " + comprimento + ".</p>");
+
+		txt = "A turma TI22 está estudando JavaScript, não é TI22?";
+		var posicao = txt.indexOf('TI22');
+		document.write("<p> A posição do texto 'TI22' na variável txt é: " + posicao + ".</p>");
+
+		posicao = txt.lastIndexOf('TI22');
+		document.write("<p> A última posição do texto 'TI22' na variável txt é: " + posicao + ".</p>");
+
+
+		var bol1 = false;
+		var bol2 = false;
+		var resultado = bol1 && bol2;
+		document.write(resultado);
+
+		resultado = bol1 || bol2;
+		document.write(resultado);
+
+		var data = new Date();
+		//var hora = data.getHours();
+		var hora = 21;
+		document.write ("<p>" + data + "</p>");
+		document.write ("<p>" + hora + "</p>");
+
+		if (hora < 12){
+			document.write ("<p>Bom dia!</p>");
+		} else if (hora < 18) {
+			document.write ("<p>Boa tarde!</p>");
+		} else {
+			document.write ("<p>Boa noite!</p>");
+		}
+
+		var dia = data.getDay();
+		document.write (dia);
+
+		if (dia == 0) {
+			document.write ("<p>Domingo</p>");
+		} else if (dia == 1) {
+			document.write ("<p>Segunda</p>");
+		} else if (dia == 2) {
+			document.write ("<p>Terça</p>");
+		} else if (dia == 3) {
+			document.write ("<p>Quarta</p>");
+		} else if (dia == 4) {
+			document.write ("<p>Quinta</p>");
+		} else if (dia == 5) {
+			document.write ("<p>Sexta</p>");
+		} else {
+			document.write ("<p>Sábado</p>");
+		}	
+
+
+switch (dia) {
+  case 0:
+    document.write ("<p>Domingo</p>");
+    break;
+  case 1:
+    document.write ("<p>Segunda</p>");
+    break;
+  case 2:
+    document.write ("<p>Terça</p>");
+    break;
+  case 3:
+    document.write ("<p>Quarta</p>");
+    break;
+  case 4:
+    document.write ("<p>Quinta</p>");
+    break;
+  case 5:
+    document.write ("<p>Sexta</p>");
+    break;
+  case  6:
+    document.write ("<p>Domingo</p>");
+}
+
+
+var i;
+for (i=2; i<=20; i=i+2){
+	document.write ("<p>Loop " + i + "</p>");
+}
+
+var cores = ["azul", "amarelo", "verde", "vermelho", "branco", "roxo"];
+
+document.write("<ol>");
+for (i=0; i<cores.length; i++){
+	document.write("<li>" + cores[i] + "</li>");
+}
+document.write("</ol>");
+
+
+
+
+
+	</script>
+
+		
+</body>
+</html>
